@@ -60,7 +60,9 @@ body{
 }
 
 #instructions{
+    position: absolute;
     color: white;
+    display: flex;
     font-family: 'Silkscreen';
     font-size: 2rem;
     top: 50%;

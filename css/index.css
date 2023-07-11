@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Silkscreen:wght@700&display=swap');
+
+body{
+    margin: 0px;
+    background: url("../images/background-image.jpg");
+    background-color: #391b70;
+    background-size: cover;
+    z-index: -1;
+    background-blend-mode: lighten;
+    overflow: hidden;
+}
+
+#game-board{
+    display: flex;
+    position: relative;
+    height: 100vh;
+}
+
+#box{
+    position: relative;
+}
+
+#game-summary{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 30%;
+    height: 40%;
+    z-index: 10;
+    background-color: rgb(149, 188, 223);
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Silkscreen';
+    box-shadow: 15px 15px 10px #0e0e0e ;
+}
+
+#restartImg{
+    width:10vh;
+    height:10vh;
+    margin-top: 2vh;
+    cursor: pointer;
+}
+
+#restartBtn{
+    padding: 0 10px; 
+    margin-top : 15px;
+}
+
+#score{
+    position: relative;
+    top: 0;
+    left: 0;
+    font-size: 2rem;
+    color: white;
+    font-family: 'Silkscreen';
+}
+
+#instructions{
+    color: white;
+    font-family: 'Silkscreen';
+    font-size: 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#highscore{
+    position: relative;
+    top: 0;
+    left: 0;
+    font-size: 2rem;
+    color: white;
+    font-family: 'Silkscreen';
+}
+
+#top-block{
+    display: block;
+    background: url("../images/trunk.jpg");
+    border-radius: 5px;
+    background-size: cover;
+    background-color:#064b09;
+    background-blend-mode:darken;
+    position: absolute;
+    top: 0%;
+    width: 10%;
+}
+
+#bottom-block{
+    display: block;
+    background: url("../images/trunk.jpg");
+    background-color:#064b09;
+    background-blend-mode:darken;
+    border-radius: 5px;
+    background-size: cover;
+    position: absolute;
+    bottom: 0%;
+    width: 10%;
+    height:30%;
+    animation: moveobstacle 5s linear infinite;
+}
+
+
+#bird{
+    position: absolute;
+    width: 3%;
+    height: 5%;
+}
+
+.bird-rotate-up{
+    animation: rotateBirdUp 0.2s linear;
+    animation-fill-mode: forwards;
+}
+
+.bird-rotate-down{
+    animation: rotateBirdDown 3s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes rotateBirdUp{
+    100%{
+        transform: rotate(-180deg)
+    }
+}
+
+@keyframes rotateBirdDown{
+    100%{
+        transform: rotate(90deg)
+    }
+}

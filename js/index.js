@@ -84,15 +84,15 @@ class Game {
   };
 
   checkHighScore = () => {
-    console.log(this.score)
+    console.log(this.score);
     if (Number(localStorage.getItem("Highscore")) < this.score)
       localStorage.setItem("Highscore", this.score);
   };
 
   stopGame = () => {
     clearInterval(this.frameId);
-    document.getElementById("instructions").style.display="none"
-    this.checkHighScore()
+    document.getElementById("instructions").style.display = "none";
+    this.checkHighScore();
     this.showGameSummary();
     this.obstacle.setFlying(false);
     this.bird.className = "";
@@ -153,7 +153,7 @@ class Bird {
 class Obstacle {
   constructor(topBlockElement, bottomBlockElement, left) {
     this.speedCounter = 0; //for increasing speed after every 4 obstacles passed
-    this.SPEED = 0.25;
+    this.SPEED = 0.45;
     this.passed = false;
     this.topBlockElement = topBlockElement;
     this.bottomBlockElement = bottomBlockElement;

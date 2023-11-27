@@ -31,15 +31,24 @@ class Game {
     );
   };
 
+  play = (e) => {
+    if (e.code == "KeyW") {
+      window.removeEventListener("keypress", this.play);
+      window.addEventListener("keypress", this.bird.setJump);
+      this.frameId = setInterval(this.startFrame, 10);
+    }
+  };
+
   startGame = () => {
+    console.log("called");
     this.score = 0;
     this.gameSummaryElement.style.display = "none";
     this.instructions.style = "none";
-    window.addEventListener("keypress", this.bird.setJump);
-    this.frameId = setInterval(this.startFrame, 10);
+    window.addEventListener("keypress", this.play);
   };
 
   startFrame = () => {
+    console.log("called");
     this.obstacle.moveBlock();
     this.updateScore();
     this.bird.dropBird();
